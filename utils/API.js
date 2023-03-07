@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const baseApi = "http://admin.avalano.at/api";
-const base = "http://admin.avalano.at";
+const baseApi = "https://admin.avalano.at/api";
+const base = "https://admin.avalano.at";
 
 // const baseApi = "http://127.0.0.1:1337/api";
 // const base = "http://127.0.0.1:1337";
