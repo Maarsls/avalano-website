@@ -9,6 +9,9 @@ const TeamSection = () => {
   const { data, isLoading, error } = useQuery({
     queryKey: "team",
     queryFn: getTeam,
+    onSuccess: (data) => {
+      console.log(data);
+    },
   });
 
   return (

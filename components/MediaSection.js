@@ -11,9 +11,8 @@ function MediaSection() {
     <div className="pb-20 p-5 pt-16 bg-primary-background-color">
       <Heading title="Neuigkeiten" />
 
-
-
-      <div className="carousel carousel-center p-4 space-x-4 justify-center rounded-box">
+      {/* TODO: Fix carousel to show first element too */}
+      <div className="carousel carousel-center p-4 space-x-4  rounded-box justify-center">
         {data?.map((media) => (
           <div className="carousel-item" key={media.headline}>
             <div className="flex flex-wrap justify-center">
@@ -29,15 +28,13 @@ function MediaSection() {
                   <h1 className="text-2xl font-bold text-center">
                     {media.headline}
                   </h1>
-                  <p className="text-center">
-                    Lorem ipsum dolor sit amet consectetusr adipisicing elit.
-                    Quisquam
-                  </p>
+                  <p className="text-center">{media.shorttext}</p>
                 </div>
               </div>
             </div>
           </div>
         ))}
+        
       </div>
     </div>
   );
