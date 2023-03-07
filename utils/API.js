@@ -1,10 +1,10 @@
 import axios from "axios";
 
-// const baseApi = "http://admin.avalano.at/api";
-// const base = "http://admin.avalano.at";
+const baseApi = "http://admin.avalano.at/api";
+const base = "http://admin.avalano.at";
 
-const baseApi = "http://127.0.0.1:1337/api";
-const base = "http://127.0.0.1:1337";
+// const baseApi = "http://127.0.0.1:1337/api";
+// const base = "http://127.0.0.1:1337";
 
 export const getAllMedia = async () => {
   const response = await axios.get(`${baseApi}/articles?populate=*`);
