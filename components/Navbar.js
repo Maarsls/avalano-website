@@ -23,13 +23,13 @@ const Navbar = () => {
 
   return (
     <div
-      className={`navbar fixed z-40 top-0 left-0 p-6 ${
+      className={`navbar fixed z-40 top-0 left-0 p-6  ${
         scrollTop > 10
           ? "bg-[#6096B4] transition-all delay-75 duration-1000 shadow-md"
           : null
       }`}
     >
-      <div className="navbar-start w-2/3">
+      <div className="navbar-start w-2/3 lg:w-auto">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
@@ -53,10 +53,20 @@ const Navbar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link href={"/avalano"} className="active:bg-secondary-background-color">Das Produkt Avalano</Link>
+              <Link
+                href={"/avalano"}
+                className="active:bg-secondary-background-color"
+              >
+                Das Produkt Avalano
+              </Link>
             </li>
             <li>
-              <Link href={"/map"} className="active:bg-secondary-background-color">Die Anwender</Link>
+              <Link
+                href={"/map"}
+                className="active:bg-secondary-background-color"
+              >
+                Die Anwender
+              </Link>
             </li>
           </ul>
         </div>
@@ -67,19 +77,29 @@ const Navbar = () => {
       </div>
 
       {/* displayed on large screens */}
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+      <div className="navbar-center hidden lg:flex  mx-auto">
+        <ul className="menu menu-horizontal px-1 lg:mx-auto">
           <li className="text-slate-200 ">
-            <Link href={"/avalano"} className="active:bg-secondary-background-color">Das Produkt Avalano</Link>
+            <Link
+              href={"/avalano"}
+              className="active:bg-secondary-background-color"
+            >
+              Das Produkt Avalano
+            </Link>
           </li>
           <li className="text-slate-200">
-            <Link href={"/map"} className="active:bg-secondary-background-color">Anwender</Link>
+            <Link
+              href={"/map"}
+              className="active:bg-secondary-background-color"
+            >
+              Anwender
+            </Link>
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
+      {/* <div className="navbar-end">
         <a className="btn">Get started</a>
-      </div>
+      </div> */}
     </div>
   );
 };

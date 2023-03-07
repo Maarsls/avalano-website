@@ -6,6 +6,7 @@ import HeroSection from "@/components/HeroSection";
 import MediaSection from "@/components/MediaSection";
 import QuotesSection from "@/components/QuotesSection";
 import CustomHead from "@/components/CustomHead";
+import FAQSection from "@/components/faq/FAQSection";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <QuotesSection />
         <MediaSection />
         <TeamSection />
+        <FAQSection/>
       </div>
     </>
   );

@@ -1,8 +1,7 @@
 import axios from "axios";
-const api = axios.create({
-  // baseURL: "http://api.avalano.at/",
-  baseUrl: "http://127.0.0.1:1337/api/",
-});
+
+// const baseApi = "http://admin.avalano.at/api";
+// const base = "http://admin.avalano.at";
 
 const baseApi = "http://127.0.0.1:1337/api";
 const base = "http://127.0.0.1:1337";

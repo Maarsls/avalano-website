@@ -2,7 +2,7 @@ import React from "react";
 
 function Heading({ title, subtitle, dark }) {
   return (
-    <div className="max-w-xl mx-auto">
+    <div className="max-w-xl mx-auto mb-2">
       <div className="text-center ">
         <div className="relative flex flex-col items-center">
           <h1
