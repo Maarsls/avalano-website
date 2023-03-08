@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
     <QueryClientProvider client={queryClient}>
       <div className="">
         <Navbar />
-        <Component {...pageProps} />
+        <Component {...pageProps}/>
         <Footer />
       </div>
     </QueryClientProvider>

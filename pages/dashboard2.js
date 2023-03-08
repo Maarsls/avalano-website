@@ -10,7 +10,7 @@ export default function Dashboard() {
   if (!user) route.push("/auth/login");
   if (user)
     return (
-      <div className="mt-64">
+      <div className="h-screen">
         <h1>Welcome to your dashboard {user.displayName}</h1>
         <button onClick={() => auth.signOut()}>Sign out</button>
       </div>

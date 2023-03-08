@@ -8,5 +8,5 @@ export default function DashboardLayout({ children }) {
   
   if (loading) return <h1>Loading</h1>;
   if (!user) route.push("/auth/login");
-  if (user) return <div className="pt-24">{children}</div>;
+  if (user) return <div className="h-screen pt-24 p-5 bg-primary-background-color">{children}</div>;
 }

@@ -20,7 +20,7 @@ const TeamSection = () => {
 
       <div className="flex flex-col gap-7 md:flex-row md:justify-center md:gap-16">
         {data?.map((member) => (
-          <div className="flex flex-col justify-center align-middle">
+          <div className="flex flex-col justify-center align-middle" key={member.name}>
             <img
               src={member.pictureUrl}
               alt="Sepp"

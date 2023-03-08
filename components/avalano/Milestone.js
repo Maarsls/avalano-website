@@ -1,14 +1,51 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-export default function Milestone({ milestone, description, when }) {
+// function useOnScreen(ref, rootMargin = "0px") {
+//   // State and setter for storing whether element is visible
+//   const [isIntersecting, setIntersecting] = useState(false);
+
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       ([entry]) => {
+//         // Update our state when observer cal lback fires
+//         setIntersecting(entry.isIntersecting);
+//       },
+//       {
+//         rootMargin,
+//       }
+//     );
+//     if (ref.current) {
+//       observer.observe(ref.current);
+//     }
+//     return () => {
+//       observer.unobserve(ref.current);
+//     };
+//   }, []); // Empty array ensures that effect is only run on mount and unmount
+
+//   return isIntersecting;
+// }
+
+export default function Milestone({ milestone, description, when, isActive }) {
+  // // Ref for the element that we want to detect whether on screen
+  // const ref = useRef();
+  // // Call the hook passing in ref and root margin
+  // // In this case it would only be considered onScreen if more ...
+  // // ... than 300px of element is visible.
+  // const onScreen = useOnScreen(ref, "-420px");
   return (
-    <div className="relative flex justify-between">
+    <div className="relative flex justify-between" >
       {/* dot */}
       <div className="flex flex-col items-center w-10 mr-4 md:w-24">
         <div>
-          <div className="flex items-center justify-center w-8 h-8 bg-primary-card-color rounded-full">
-            <div className="w-4 h-4 bg-slate-200 rounded-full"></div>
-          </div>
+          {isActive ? (
+            <div className="flex items-center justify-center w-8 h-8 bg-primary-card-color rounded-full">
+              <div className="w-4 h-4 bg-slate-200 rounded-full"></div>
+            </div>
+          ) : (
+            <div className="flex items-center justify-center w-8 h-8 bg-primary-card-color rounded-full">
+              <div className="w-4 h-4 bg-primary-card-color rounded-full"></div>
+            </div>
+          )}
         </div>
 
         <div className="w-px h-full bg-blue-300 dark:bg-gray-600"></div>
