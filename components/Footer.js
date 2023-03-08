@@ -26,7 +26,6 @@ function Footer() {
           </a>
           <a>
             <FaLinkedin className="text-2xl" />
-            <FcLink className="text-2xl" />
           </a>
         </div>
       </div>
