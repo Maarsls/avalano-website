@@ -5,9 +5,12 @@ import logo from "../public/avalano-logo.png";
 
 import Link from "next/link";
 
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../utils/firebase";
+
 const Navbar = () => {
   const [scrollTop, setScrollTop] = useState(0);
-  const [myOpacity, setOpacity] = useState(0);
+  const [user, loading] = useAuthState(auth);
 
   useEffect(() => {
     const handleScroll = (event) => {
@@ -97,9 +100,17 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      {/* <div className="navbar-end">
-        <a className="btn">Get started</a>
-      </div> */}
+      <div className="navbar-end">
+        {user ? (
+          <Link href={"/dashboard"} className="btn">
+            Dashboard
+          </Link>
+        ) : (
+          <Link href={"/auth/login"} className="btn">
+            Anmelden
+          </Link>
+        )}
+      </div>
     </div>
   );
 };

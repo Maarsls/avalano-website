@@ -12,7 +12,7 @@ function MediaSection() {
       <Heading title="Neuigkeiten" />
 
       {/* TODO: Fix carousel to show first element too */}
-      <div className="carousel carousel-center p-4 space-x-4  rounded-box justify-center">
+      <div className="carousel carousel-center p-4 space-x-4  rounded-box ">
         {data?.map((media) => (
           <div className="carousel-item" key={media.headline}>
             <div className="flex flex-wrap justify-center">

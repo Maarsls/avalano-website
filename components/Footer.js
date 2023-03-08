@@ -5,6 +5,7 @@ import Logo from "../public/logo.png";
 
 import { FiTwitter } from "react-icons/fi";
 import { FaLinkedin } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 function Footer() {
   return (
@@ -25,6 +26,7 @@ function Footer() {
           </a>
           <a>
             <FaLinkedin className="text-2xl" />
+            <FcLink className="text-2xl" />
           </a>
         </div>
       </div>
