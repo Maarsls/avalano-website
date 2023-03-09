@@ -16,6 +16,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
+import { addOrUpdateUser } from "../../utils/strapiAPI";
+
 export default function Login() {
   const route = useRouter();
   const [user, loading] = useAuthState(auth);
@@ -28,6 +30,7 @@ export default function Login() {
     try {
       const result = await signInWithPopup(auth, googleProvider);
       //   console.log(result.user);
+      const res = await addOrUpdateUser(result.user);
       route.push("/dashboard");
     } catch (error) {
       console.log(error.message);
@@ -37,6 +40,8 @@ export default function Login() {
   const GithubLogin = async () => {
     try {
       const result = await signInWithPopup(auth, GithubProvider);
+      const res = await addOrUpdateUser(result.user);
+
       console.log(result.user);
       route.push("/dashboard");
     } catch (error) {

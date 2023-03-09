@@ -4,39 +4,71 @@ import { auth } from "../../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useRouter } from "next/router";
 
+import { RiCloseCircleLine } from "react-icons/ri";
+import Link from "next/link";
+
+import { newUser } from "../../utils/strapiAPI";
+
 export default function register() {
   const route = useRouter();
   const [user, loading] = useAuthState(auth);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
-  const [areSame, setAreSame] = useState(false);
+  const [areSame, setAreSame] = useState(true);
+
+  const [error, setError] = useState(null);
 
   const onRegister = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        
-        const user = userCredential.user;
+    console.log(password, password2);
+    if (checkPasswordAndEmail()) {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(async (userCredential) => {
+          const user = userCredential.user;
           console.log(user);
+          const res = await newUser(user);
+          console.log(res);
           route.push("/dashboard");
-        // Signed in
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-      });
+          // Signed in
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode, errorMessage);
+          switch (errorCode) {
+            case "auth/email-already-in-use":
+              setError("Email bereits in Verwendung");
+              break;
+            case "auth/invalid-email":
+              setError("Ungültige Email");
+              break;
+            case "auth/weak-password":
+              setError("Passwort zu schwach");
+              break;
+            default:
+              setError("Unbekannter Fehler");
+              break;
+          }
+        });
+    }
   };
 
-  const checkPassword = () => {
-    console.log("check");
-    console.log(password, password2);
-    if (password === password2) {
-      setAreSame(true);
-    } else {
-      setAreSame(false);
+  const checkPasswordAndEmail = () => {
+    if (email === "") {
+      setError("Email darf nicht leer sein");
+      return false;
     }
+    if (password === "") {
+      setError("Passwort darf nicht leer sein");
+      return false;
+    }
+
+    if (password === password2) {
+      return true;
+    }
+    setError("Passwörter stimmen nicht überein");
+    return false;
   };
   useEffect(() => {
     if (user) {
@@ -52,7 +84,11 @@ export default function register() {
       <div className="flex items-center justify-center h-screen bg-primary-background-color">
         <div className="w-full max-w-md">
           <form className="bg-primary-card-color shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <div className="mb-4">
+            <div className="text-center mb-6">
+              <h1 className="text-3xl font-bold text-white">Registrieren</h1>
+            </div>
+
+            <div className="mb-6">
               <label
                 className="block text-white text-sm font-bold mb-2"
                 htmlFor="email"
@@ -69,7 +105,7 @@ export default function register() {
                 }}
               />
             </div>
-            <div className="mb-6">
+            <div className="mb-2">
               <label
                 className="block text-white text-sm font-bold mb-2"
                 htmlFor="password"
@@ -103,14 +139,22 @@ export default function register() {
                 placeholder="******************"
                 onChange={(e) => {
                   setPassword2(e.target.value);
-                  console.log(password, password2);
-                  checkPassword();
                 }}
               />
-              {!areSame && (
-                <p className="text-red-500 text-xs italic">
-                  Please choose a password.
-                </p>
+              {error && (
+                <div className="alert alert-error shadow-lg">
+                  <div>
+                    <RiCloseCircleLine className="text-red-900 text-xl" />
+                    <span>
+                      {error}{" "}
+                      {error == "Email bereits in Verwendung" && (
+                        <Link href={"/auth/login"} className="text-green-400">
+                          Stattdessen einloggen
+                        </Link>
+                      )}
+                    </span>
+                  </div>
+                </div>
               )}
             </div>
             <div className="flex items-center justify-center">
