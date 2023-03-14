@@ -14,8 +14,8 @@ module.exports = {
       colors: {
         "primary-background-color": {
           light: "#123456",
-          DEFAULT:"#93BFCF",
-          dark:"#6096B4",
+          DEFAULT: "#93BFCF",
+          dark: "#6096B4",
         },
         "secondary-background-color": "#BDCDD6",
         "primary-card-color": "#6096B4",

@@ -9,7 +9,7 @@ function Avalano() {
     <div>
       <CustomHead title="Das Produkt" description={"Einfach baba"} />
 
-      <THREED />
+      {/* <THREED /> */}
       <Timeline />
     </div>
   );

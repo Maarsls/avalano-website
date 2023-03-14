@@ -4,26 +4,26 @@ function HeroSection() {
   return (
     <div className="">
       {/* backgroundimage */}
-      <div className="relative  w-full h-screen">
+      <div className="relative w-full h-screen">
         <img
-          src="/images/hero.jpg"
+          src="/assets/hero2.jpeg"
           alt="hero"
-          className="absolute h-full w-full object-cover"
+          className="absolute object-cover w-full h-full"
         />
 
-        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 flex justify-center align-middle">
+        <div className="absolute top-0 left-0 flex justify-center w-full h-full align-middle bg-black opacity-30">
           {/* headline Avalano */}
           <div className="flex flex-col justify-center align-middle">
-            <h1 className="text-5xl text-white font-bold text-center">
+            <h1 className="text-5xl font-bold text-center text-white">
               Avalano
             </h1>
-            <p className="text-2xl text-white text-center">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <p className="text-2xl text-center text-white">
+              Die Lawinensonde die mitdenkt - Know your snow
             </p>
           </div>
         </div>
         {/* <div>
-          <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="absolute transform -translate-x-1/2 bottom-10 left-1/2 animate-bounce">
             <button className="btn btn-primary">Get Started</button>
           </div>
         </div> */}

@@ -38,12 +38,12 @@ export default function Milestone({ milestone, description, when, isActive }) {
       <div className="flex flex-col items-center w-10 mr-4 md:w-24">
         <div>
           {isActive ? (
-            <div className="flex items-center justify-center w-8 h-8 bg-primary-card-color rounded-full">
-              <div className="w-4 h-4 bg-slate-200 rounded-full"></div>
+            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-card-color">
+              <div className="w-4 h-4 rounded-full bg-slate-200"></div>
             </div>
           ) : (
-            <div className="flex items-center justify-center w-8 h-8 bg-primary-card-color rounded-full">
-              <div className="w-4 h-4 bg-primary-card-color rounded-full"></div>
+            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary-card-color">
+              <div className="w-4 h-4 rounded-full bg-primary-card-color"></div>
             </div>
           )}
         </div>
@@ -52,11 +52,11 @@ export default function Milestone({ milestone, description, when, isActive }) {
       </div>
 
       <div>
-        <h2 className="inline-block px-4 py-2 mb-4 text-xs font-medium  bg-secondary-background-color rounded-3xl">
+        <h2 className="inline-block px-4 py-2 mb-4 text-xs font-medium bg-secondary-background-color rounded-3xl">
           {when}
         </h2>
 
-        <div className="relative flex-1 mb-10 bg-secondary-background-color border-b-4 border-primary-background-color-dark shadow rounded-3xl">
+        <div className="relative flex-1 mb-10 border-b-4 shadow bg-secondary-background-color border-primary-background-color-dark rounded-3xl">
           <div className="relative z-20 p-6">
             <p className="mb-2 text-xl font-bold text-gray-600">{milestone}</p>
 

@@ -52,6 +52,13 @@ const updateUser = async (user, id) => {
   return res2;
 };
 
+const createMailingList = async (email) => {
+  const res = await postStrapi("/mailings", {
+    email: email,
+  });
+  return res;
+};
+
 export const addOrUpdateUser = async (user) => {
   const res = await getStrapi(`/users-data`);
   const id = res.data.filter(
@@ -61,5 +68,15 @@ export const addOrUpdateUser = async (user) => {
     return await updateUser(user, id);
   } else {
     return await newUser(user);
+  }
+};
+
+export const addOrUpdateMailingList = async (email) => {
+  const res = await getStrapi(`/mailings`);
+  const id = res.data.filter((item) => item.attributes.email === email)[0]?.id;
+  if (id) {
+    return { data: "Email already exists" };
+  } else {
+    return await createMailingList(email);
   }
 };
