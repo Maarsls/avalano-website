@@ -64,7 +64,7 @@ function Footer() {
           <a>
             <FiTwitter className="text-2xl" />
           </a>
-          <a>
+          <a href="https://www.linkedin.com/company/90982967">
             <FaLinkedin className="text-2xl" />
           </a>
         </div>
