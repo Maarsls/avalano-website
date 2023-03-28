@@ -29,6 +29,8 @@ export default function Home() {
           property="og:image"
           content="https://www.avalano.at/assets/hero2.jpeg"
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Avalano" />
       </CustomHead>
 
       <HeroSection />
