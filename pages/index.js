@@ -19,7 +19,7 @@ export default function Home() {
       >
         <meta
           property="og:title"
-          content="Avalano - Lawinensonde zur Schneedeckenanalyse"
+          content="Avalano-Lawinensonde zur Schneedeckenanalyse"
         />
         <meta
           property="og:description"
