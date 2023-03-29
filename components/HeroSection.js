@@ -14,12 +14,12 @@ function HeroSection() {
         <div className="absolute top-0 left-0 flex justify-center w-full h-full align-middle bg-black opacity-30">
           {/* headline Avalano */}
           <div className="flex flex-col justify-center align-middle">
-            <h1 className="text-5xl font-bold text-center text-white">
-              Avalano
+            <h1 className="text-3xl font-bold text-center text-white">
+              Avalano - Lawinensonde zur Schneedeckendiagnose
             </h1>
-            <p className="text-2xl text-center text-white">
+            {/* <p className="text-2xl text-center text-white">
               Die Lawinensonde die mitdenkt - Know your snow
-            </p>
+            </p> */}
           </div>
         </div>
         {/* <div>

@@ -15,7 +15,7 @@ const TeamSection = () => {
   });
 
   return (
-    <div className="pb-20 p-5 pt-16 bg-secondary-background-color">
+    <div className="p-5 pt-16 pb-20 bg-secondary-background-color">
       <Heading title="Unser Team" />
 
       <div className="flex flex-col gap-7 md:flex-row md:justify-center md:gap-16">
@@ -24,9 +24,9 @@ const TeamSection = () => {
             <img
               src={member.pictureUrl}
               alt="Sepp"
-              className="rounded-full w-auto h-80 mx-auto mb-2"
+              className="w-auto mx-auto mb-2 rounded-full h-80"
             />
-            <h1 className="text-2xl font-bold text-center ">{member.name}</h1>
+            <p className="text-2xl font-bold text-center ">{member.name}</p>
 
             <p className="text-center font-latoRegular">{member.role}</p>
 
