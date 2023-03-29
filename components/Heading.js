@@ -5,13 +5,13 @@ function Heading({ title, subtitle, dark }) {
     <div className="max-w-xl mx-auto mb-2">
       <div className="text-center ">
         <div className="relative flex flex-col items-center">
-          <h1
+          <p
             className={`text-6xl font-bold leading-tight  ${
               dark ? "text-gray-200" : "dark:text-gray-700"
             }`}
           >
             {title}
-          </h1>
+          </p>
 
           <div className="flex w-32 mt-5 mb-4 overflow-hidden rounded">
             <div className="flex-1 h-2 bg-blue-600"></div>

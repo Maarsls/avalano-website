@@ -16,7 +16,7 @@ function MediaSection() {
         {data?.map((media) => (
           <div className="carousel-item" key={media.headline}>
             <div className="flex flex-wrap justify-center">
-              <div className="shadow-md bg-secondary-background-color rounded-3xl w-80 ">
+              <div className="items-center shadow-md bg-secondary-background-color rounded-3xl w-80">
                 <img
                   src={media.pictureUrl}
                   alt="Sepp"
@@ -28,13 +28,18 @@ function MediaSection() {
                   <p className="text-2xl font-bold text-center">
                     {media.headline}
                   </p>
-                  <p className="text-center">{media.shorttext}</p>
+                  <p
+                    className="mt-5 text-center"
+                    dangerouslySetInnerHTML={{ __html: media.shorttext }}
+                  >
+                    {/* {media.shorttext} */}
+                  </p>
+                  
                 </div>
               </div>
             </div>
           </div>
         ))}
-        
       </div>
     </section>
   );
