@@ -12,9 +12,9 @@ export default function Home() {
   return (
     <>
       <CustomHead
-        title="Avalano"
+        title="Avalano - Lawinensonde zur Schneedeckenanalyse"
         description={
-          "Der Avalano Lawinensonde ist ein hochwertiges Werkzeug, das entwickelt wurde, um Ihnen im ungesicherten Gelände Sicherheit zu bieten. Mit seiner robusten Konstruktion und seinem benutzerfreundlichen Design ist dieser Probe perfekt für alle geeignet, die gerne abseits der Piste Ski oder Snowboard fahren. Kontaktieren Sie uns noch heute, um mehr zu erfahren! Die Gründer von Avalano sind Marcel Maffey und Patrick Jenewein."
+          "Die Avalano Lawinensonde ist ein hochwertiges Werkzeug, das entwickelt wurde, um Ihnen im ungesicherten Gelände Sicherheit zu bieten. Die Gründer von Avalano sind Marcel Maffey und Patrick Jenewein."
         }
       >
         <meta
