@@ -1,53 +1,19 @@
-import Head from "next/head";
-import Image from "next/image";
-
-import TeamSection from "@/components/TeamSection";
-import HeroSection from "@/components/HeroSection";
-import MediaSection from "@/components/MediaSection";
-import QuotesSection from "@/components/QuotesSection";
 import CustomHead from "@/components/CustomHead";
-import FAQSection from "@/components/faq/FAQSection";
 
 export default function Home() {
   return (
     <>
       <CustomHead
-        title="Avalano - Lawinensonde zur Schneedeckenanalyse"
+        title="Glstzlserver"
         description={
-          "Die Avalano Lawinensonde ist ein hochwertiges Werkzeug, das entwickelt wurde, um Ihnen im ungesicherten Gelände Sicherheit zu bieten. Die Gründer von Avalano sind Marcel Maffey und Patrick Jenewein."
+          "Glstzlserver ist ein Minecraft Server, der sich auf die Bedürfnisse von Spielern mit wenig Zeit konzentriert."
         }
       >
-        <meta
-          property="og:title"
-          content="Avalano-Lawinensonde zur Schneedeckenanalyse"
-        />
-        <meta
-          property="og:description"
-          content="Der Avalano Lawinensonde ist ein hochwertiges Werkzeug, das entwickelt wurde, um Ihnen im ungesicherten Gelände Sicherheit zu bieten. Mit seiner robusten Konstruktion und seinem benutzerfreundlichen Design ist dieser Probe perfekt für alle geeignet, die gerne abseits der Piste Ski oder Snowboard fahren. Kontaktieren Sie uns noch heute, um mehr zu erfahren! Die Gründer von Avalano sind Marcel Maffey und Patrick Jenewein."
-        />
-        <meta
-          property="og:image"
-          content="https://www.avalano.at/assets/oggraph.jpg"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:image:type" content="image/jpeg"/>
-        <meta property="og:image:width" content="300"/>
-        <meta property="og:image:height" content="169"/>
-
-        <meta property="og:site_name" content="Avalano" />
-
-
-        <meta property="og:url" content="http://www.avalano.at"/>
-        <meta property="og:locale" content="de_DE"/>
       </CustomHead>
 
-      <HeroSection />
 
       <div className="">
-        <QuotesSection />
-        <MediaSection />
-        <TeamSection />
-        <FAQSection />
+        <h1>Desisdertext</h1>
       </div>
     </>
   );

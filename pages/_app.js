@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 
 import { QueryClient, QueryClientProvider } from "react-query";
 
@@ -12,7 +12,6 @@ export default function App({ Component, pageProps }) {
       <div className="">
         <Navbar />
         <Component {...pageProps}/>
-        <Footer />
       </div>
     </QueryClientProvider>
   );

@@ -26,18 +26,18 @@ const Navbar = () => {
 
   return (
     <div
-      className={`navbar fixed z-40 top-0 left-0 p-6  ${
+      className={`navbar z-40 top-0 left-0 p-6  ${
         scrollTop > 10
           ? "bg-[#6096B4] transition-all delay-75 duration-1000 shadow-md"
           : null
       }`}
     >
-      <div className="navbar-start w-2/3 lg:w-auto">
+      <div className="w-2/3 navbar-start lg:w-auto">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="w-5 h-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -53,51 +53,21 @@ const Navbar = () => {
           {/* burger menu */}
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
           >
-            <li>
-              <Link
-                href={"/avalano"}
-                className="active:bg-secondary-background-color"
-              >
-                Das Produkt Avalano
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={"/map"}
-                className="active:bg-secondary-background-color"
-              >
-                Die Anwender
-              </Link>
-            </li>
+            
           </ul>
         </div>
         <Link href={"/"}>
-          <Image src={logo} alt="Flowbite Logo" className="w-52 mr-3 h-auto" />
+          <p>GLATZSERVER</p>
         </Link>
-        {/* <a className="btn btn-ghost normal-case text-xl">daisyUI</a> */}
+        {/* <a className="text-xl normal-case btn btn-ghost">daisyUI</a> */}
       </div>
 
       {/* displayed on large screens */}
-      <div className="navbar-center hidden lg:flex  mx-auto">
-        <ul className="menu menu-horizontal px-1 lg:mx-auto">
-          <li className="text-slate-200 ">
-            <Link
-              href={"/avalano"}
-              className="active:bg-secondary-background-color"
-            >
-              Das Produkt Avalano
-            </Link>
-          </li>
-          <li className="text-slate-200">
-            <Link
-              href={"/map"}
-              className="active:bg-secondary-background-color"
-            >
-              Anwender
-            </Link>
-          </li>
+      <div className="hidden mx-auto navbar-center lg:flex">
+        <ul className="px-1 menu menu-horizontal lg:mx-auto">
+          
         </ul>
       </div>
       <div className="navbar-end">

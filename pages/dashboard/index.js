@@ -7,6 +7,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 export default function index() {
   const [user, loading] = useAuthState(auth);
 
+  
   return (
     <DashboardLayout>
       <div className="">
